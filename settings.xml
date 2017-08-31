@@ -7,8 +7,8 @@
   <con:entry key="Save After" value="false"/>
   <con:entry key="Add Settings" value="true"/>
   <con:entry key="WSS Password Type" value=""/>
-  <con:entry key="TestSuite" value="Copy of Event Engine API Calls V2.5"/>
-  <con:entry key="Endpoint" value=""/>
+  <con:entry key="TestSuite" value="Event Engine API Calls V2.5"/>
+  <con:entry key="Endpoint" value="http://staging-api.msg.com"/>
   <con:entry key="Select Report Type" value="TestCase Report"/>
   <con:entry key="System Properties" value=""/>
   <con:entry key="Run in-process" value="false"/>
@@ -32,7 +32,7 @@
   <con:entry key="Domain" value=""/>
   <con:entry key="Tool Args" value=""/>
   <con:entry key="Save Project" value="true"/>
-</xml-fragment>]]></con:setting><con:setting id="04950577-87d9-4bcc-9712-44cc33a0e157fileName">EE-Composit-readyapi-project</con:setting></con:settings><con:vcsConfiguration><con:vcsName>Git</con:vcsName><con:repositoryIdentifier>https://github.com/arhimel/EE_ReadyAPI.git</con:repositoryIdentifier></con:vcsConfiguration><con:savedRecentRuns>1</con:savedRecentRuns><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest"><con:script disabled="true">
+</xml-fragment>]]></con:setting><con:setting id="04950577-87d9-4bcc-9712-44cc33a0e157fileName">EE-Composit-readyapi-project</con:setting></con:settings><con:vcsConfiguration><con:vcsName>Git</con:vcsName><con:repositoryIdentifier>https://github.com/arhimel/EE_ReadyAPI.git</con:repositoryIdentifier></con:vcsConfiguration><con:savedRecentRuns>1</con:savedRecentRuns><con:requirements/><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest"><con:script disabled="false">
 // Calling the request headers
 
 import com.eviware.soapui.support.types.StringToStringMap 
@@ -64,8 +64,8 @@ if ((restEndpoint).contains('/v2.5/'))
 	//headers.put( "Authorization", "Bearer e0554a52bf12b176ae14a9f85b60fcb2") // Replace values with those you need 
 	//headers.put( "Authorization", "Bearer e0554a52bf12b176ae14a9f85b60fcb2") // Replace values with those you need 
 
-	// Adding the custom header to request headers
+	//== Adding the custom header to request headers
 	request.requestHeaders = headers
-	httpRequest = testStep.testRequest
+	httpRequest = context.testStep.testRequest
 	propertyHolder = httpRequest.getParams()
 }</con:script></con:eventHandlers><con:authRepository/><con:tags/></con:soapui-project>
